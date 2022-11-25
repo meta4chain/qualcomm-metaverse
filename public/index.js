@@ -844,7 +844,7 @@ function loaderGLTF(loader, GLTFName, position, scale, collider) {
                     worldOctree.fromGraphNode(gltf.scene.children[j]);
                 }
                 if(gltf.scene.children[j].name == "Emissivos" || gltf.scene.children[j].name == "Plano_Buracos"){
-                    gltf.scene.children[j].material.opacity = 0;
+                    gltf.scene.children[j].material.opacity = .1;
                     gltf.scene.children[j].material.transparent = true;
                 }
             }
@@ -1006,15 +1006,16 @@ function onStart(level) {
     characterThiago.loadGLTF()
 
     var loaderSphere = new THREE.TextureLoader();
-    loaderSphere.load('./files/sphere.jpg', function ( texture ) {
+    loaderSphere.load('./files/QVesting/heroQC.jpeg', function ( texture ) {
         
-        var geometry = new THREE.SphereGeometry( 500, 500, 500 );
+        var geometry = new THREE.SphereGeometry( 200, 200, 200 );
     
         var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
         var mesh = new THREE.Mesh( geometry, material );
         mesh.material.side = THREE.BackSide;
-        mesh.scale.set(-1, 1, 1)
-        mesh.rotation.set(0, 89, 0)
+        mesh.position.set(0, -15, 0)
+        mesh.scale.set(1, 1, 1)
+        mesh.rotation.set(0, 40, 0)
         scene.add( mesh );
     
     } );
