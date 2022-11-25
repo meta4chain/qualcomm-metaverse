@@ -198,6 +198,14 @@ export default class CreateVideo {
             this.scene.add(plane)
         }
 
+        let planeGeometry = new THREE.PlaneGeometry(16, 10)
+        let texture = new THREE.TextureLoader().load('../files/QVesting/heroQC.jpeg')
+        let planeMaterial = new THREE.MeshLambertMaterial({ map: texture, DoubleSide: true })
+
+        let planeWindow = new THREE.Mesh(planeGeometry, planeMaterial)
+        planeWindow.position.set(-11.7, 3, -8.5)
+        planeWindow.rotation.set(0, 89.55, 0)
+        this.scene.add(planeWindow)
 
         let balloonplaneGeometry = new THREE.PlaneGeometry(1.5, 1.5)
         let balloonTexture = new THREE.TextureLoader().load('../files/QVesting/balao1.png')
